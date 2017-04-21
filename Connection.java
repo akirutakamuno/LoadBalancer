@@ -66,19 +66,13 @@ class Connection implements Runnable {
         execv += unique;
         execv += " ";
         execv += port;
-        System.out.print("\n");
-        System.out.print(execv);
-        System.out.print("\n");
         Process p = Runtime.getRuntime().exec(sh);
         try{ TimeUnit.SECONDS.sleep(1); } catch (Exception e) {}
         path += unique;
         BufferedReader br = new BufferedReader(new FileReader(location));
         StringBuilder sb = new StringBuilder();
         String line = br.readLine();
-        System.out.print("\n");
         String route = line.toString();
-        System.out.print(route);
-        System.out.print("\n");
         try{
                 TimeUnit.SECONDS.sleep(1);
         } catch (Exception e) {System.out.print(e);}
@@ -88,12 +82,11 @@ class Connection implements Runnable {
         loc += "/";
         loc += route;
         if (i == 0){
-        outWriter.write("HTTP/1.1 302 Found\r\n");        
-        outWriter.write("Content-type: text/plain\r\n");
-        //outWriter.write("Server: vinit\r\n");           
-        outWriter.write("Location: "+loc+"\r\n");
-        outWriter.write("\r\n\r\n");
-        i += 1;
+           outWriter.write("HTTP/1.1 302 Found\r\n");        
+           outWriter.write("Content-type: text/plain\r\n");          
+           outWriter.write("Location: "+loc+"\r\n");
+           outWriter.write("\r\n\r\n");
+           i += 1;
         }
         
     }
