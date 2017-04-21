@@ -50,9 +50,9 @@ public class Switch {
             Socket incoming = s.accept();
             p += 1;
             port += Integer.toString(p);
-            Runnable r = new Connection(incoming, port, cmd, path, addrbook[i]);
-            Thread t = new Thread(r);
-            t.start();
+            Runnable Single = new Connection(incoming, port, cmd, path, addrbook[i]);
+            Thread Serve = new Thread(Single);
+            Serve.start();
             int len = port.length() - 1;
             port = port.substring(0, len);
             i++;
