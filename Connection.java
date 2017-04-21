@@ -77,7 +77,6 @@ class Connection implements Runnable {
            outWriter.write("Location: "+loc+"\r\n");
            outWriter.write("\r\n\r\n");
            i += 1;
-        }
-        
+        }  
     }
 }
