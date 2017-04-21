@@ -42,7 +42,7 @@ public class Switch {
         {  
           
          InetAddress bindAddr = InetAddress.getByName(addr);
-         int i = 1;
+         int i = 0;
          ServerSocket s = new ServerSocket(80, 1, bindAddr);
          while (true)
          {  
