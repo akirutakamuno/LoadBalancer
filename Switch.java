@@ -50,7 +50,7 @@ public class Switch {
             Socket incoming = s.accept();
             p += 1;
             port += Integer.toString(p);
-            Runnable r = new Connection(incoming, port);
+            Runnable r = new Connection(incoming, port, cmd, path, addrbook[i]);
             Thread t = new Thread(r);
             t.start();
             int len = port.length() - 1;
