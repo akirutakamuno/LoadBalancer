@@ -51,24 +51,20 @@ class Connection implements Runnable {
             }catch(Exception e){
                 System.out.println(e);
             }
-        senity+=1;
+          senity+=1;
         }
-        }
+   }
  
 
     public void routeRequest(OutputStreamWriter outWriter) throws Exception{
-        int R  = 34;
-        char sla = (char) R;
-        System.out.print(sla);
-        System.out.print(".......");
         String unique = UUID.randomUUID().toString();
         unique = unique.substring(0, 5);
         execv += unique;
         execv += " ";
         execv += port;
-        Process p = Runtime.getRuntime().exec(sh);
+        Process p = Runtime.getRuntime().exec(execv);
         try{ TimeUnit.SECONDS.sleep(1); } catch (Exception e) {}
-        path += unique;
+        location += unique;
         BufferedReader br = new BufferedReader(new FileReader(location));
         StringBuilder sb = new StringBuilder();
         String line = br.readLine();
